@@ -15,7 +15,7 @@ class UserTableSeeder extends Seeder
             'username' => 'seddik benzemame',
             'email' => 'seddik.benz.dev@gmail.com',
             'role' => 'admin',
-            'company_id' => 0,
+            'company_id' => 1,
             'password' => app('hash')->make('seddik0540055010'),
             'remember_token' => str_random(10),
         ]);
