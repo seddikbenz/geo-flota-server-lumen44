@@ -38,5 +38,13 @@ $api->version('v1', function ($api) {
             'uses' => 'App\Http\Controllers\Auth\AuthController@deleteInvalidate',
             'as' => 'api.auth.invalidate'
         ]);
+
+        // companies routes
+
+        $api->get('/companies', [
+            'uses' => 'App\Http\Controllers\CompanyController@getAll',
+            'as' => 'api.company.getAll'
+        ]);
+
     });
 });

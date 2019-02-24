@@ -14,8 +14,9 @@ class UserTableSeeder extends Seeder
         DB::table('users')->insert([
             'username' => 'seddik benzemame',
             'email' => 'seddik.benz.dev@gmail.com',
-            'role' => 'admin',
+            'role' => 'superadmin',
             'company_id' => 1,
+            'user_id' => 1,
             'password' => app('hash')->make('seddik0540055010'),
             'remember_token' => str_random(10),
         ]);
