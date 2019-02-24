@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTrackersTable extends Migration
+class CreateGroupsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateTrackersTable extends Migration
      */
     public function up()
     {
-        Schema::create('trackers', function (Blueprint $table) {
+        Schema::create('groups', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code')->unique();
+            $table->string('name');
 
-            $table->integer('car_id')->unsigned()->nullable();
-            $table->foreign('car_id')
-                ->references('id')->on('cars');
+            $table->integer('company_id')->unsigned();
+            $table->foreign('company_id')
+                ->references('id')->on('companies');
 
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ class CreateTrackersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trackers');
+        Schema::dropIfExists('groups');
     }
 }

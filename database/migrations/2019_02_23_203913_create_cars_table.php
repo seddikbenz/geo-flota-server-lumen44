@@ -16,6 +16,13 @@ class CreateCarsTable extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->increments('id');
             $table->string('numberplate')->unique();
+            $table->string('code')->nullable();
+            $table->string('gps_code')->nullable();
+
+            $table->integer('group_id')->unsigned()->nullable();
+            $table->foreign('group_id')
+                ->references('id')->on('groups')
+                ->onDelete('cascade');
 
             $table->integer('company_id')->unsigned();
             $table->foreign('company_id')

@@ -59,6 +59,11 @@ class User extends Model implements
         return $this->belongsTo('App\Company');
     }
 
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
     public function cars()
     {
         return $this->belongsToMany('App\Car');
