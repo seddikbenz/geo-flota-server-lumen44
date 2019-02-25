@@ -46,5 +46,15 @@ $api->version('v1', function ($api) {
             'as' => 'api.company.getAll'
         ]);
 
+        $api->post('/companies', [
+            'uses' => 'App\Http\Controllers\CompanyController@create',
+            'as' => 'api.company.create'
+        ]);
+
+        $api->delete('/companies/{id}', [
+            'uses' => 'App\Http\Controllers\CompanyController@delete',
+            'as' => 'api.company.delete'
+        ]);
+
     });
 });
