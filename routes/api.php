@@ -41,6 +41,11 @@ $api->version('v1', function ($api) {
 
         // companies routes
 
+        $api->get('/companies/{id}', [
+            'uses' => 'App\Http\Controllers\CompanyController@getCompany',
+            'as' => 'api.company.getCompany'
+        ]);
+
         $api->get('/companies', [
             'uses' => 'App\Http\Controllers\CompanyController@getAll',
             'as' => 'api.company.getAll'
@@ -54,6 +59,11 @@ $api->version('v1', function ($api) {
         $api->delete('/companies/{id}', [
             'uses' => 'App\Http\Controllers\CompanyController@delete',
             'as' => 'api.company.delete'
+        ]);
+
+        $api->put('/companies/{id}', [
+            'uses' => 'App\Http\Controllers\CompanyController@update',
+            'as' => 'api.company.update'
         ]);
 
     });
