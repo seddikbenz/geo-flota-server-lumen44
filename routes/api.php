@@ -11,6 +11,10 @@
 |
 */
 
+$app->get('/', function () {
+    return 'geo-flota';
+});
+
 $api = $app->make(Dingo\Api\Routing\Router::class);
 
 $api->version('v1', function ($api) {
